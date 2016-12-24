@@ -3,9 +3,7 @@ from rest_framework.response import Response
 
 
 class PayloadView(APIView):
+    rest_actions = ('post', )
 
-	rest_actions = ('post', )
-
-	def post(self, request):
-		return Response(request.get_full_path())
-
+    def post(self, request):
+        return Response(request.get_full_path())
