@@ -1,9 +1,14 @@
-from rest_framework.views import APIView
 from rest_framework.response import Response
+from matcha.views import APIView
+
+from app.utils import is_default_branch
 
 
 class PayloadView(APIView):
     rest_actions = ('post', )
 
     def post(self, request):
-        return Response(request.get_full_path())
+        data = self.data(request)
+        if is_default_branch(data):
+            print('u')
+        return Response(data)

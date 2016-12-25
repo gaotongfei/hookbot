@@ -5,3 +5,4 @@ __pycache__
 
 hookbot/settings/development.py
 hookbot/settings/production.py
+*.swp
